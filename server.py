@@ -7,7 +7,7 @@ app = Flask("Emotion Detector")
 
 @app.route("/emotionDetector")
 def emotion_detector_endpoint():
-    """Analyze the text passed as query parameter and return emotion scores."""
+    """Analyze the input text and return emotion scores with dominant emotion."""
     text_to_analyze = request.args.get("textToAnalyze")
     response = emotion_detector(text_to_analyze)
 
@@ -30,7 +30,7 @@ def emotion_detector_endpoint():
 
 @app.route("/")
 def render_index_page():
-    """Render the application index page."""
+    """Render the main application index page."""
     return render_template("index.html")
 
 
